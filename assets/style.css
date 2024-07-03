@@ -1,32 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
 body{
+    width: 100vw;
+    height: 100vh;
     margin: 0;
     background-color: #000;
     color: #eee;
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-size: 12px;
 }
+
 a{
     text-decoration: none;
 }
+
 header{
-    width: 1140px;
-    max-width: 80%;
-    margin: auto;
-    height: 50px;
+    background-color: transparent;
+    width: 100%;
+    height: 10vh; /* Define a altura do header para 10% da altura da viewport */
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
     z-index: 100;
 }
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo_rm{
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    border: 2px solid #03A63C;
+}
+
+.logo_rm:hover{
+    box-shadow: 0px 0px 2px white;
+}
+
+.logo:hover{
+    color: white;
+}
+
+.logo{
+    font-family: Poppins;
+    width: 45px;
+    height: 45px;
+    font-size: 26px;
+    margin-top: 3px;
+    color: #03A63C;
+}
+
 header a{
+    width: 100px;
+    text-align: center;
+    font-weight: 500;
     color: #eee;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 8px;
     margin-right: 40px;
 }
+
+header a:hover{
+    color: white;
+    background-color: #03A63C;
+    transform: scale(1.1);
+}
+
 /* carousel */
 .carousel{
-    height: 100vh;
-    margin-top: -50px;
+    height: 90vh; /* Define a altura do carousel para 90% da altura da viewport */
     width: 100vw;
     overflow: hidden;
     position: relative;
@@ -44,7 +93,7 @@ header a{
 }
 .carousel .list .item .content{
     position: absolute;
-    top: 20%;
+    top: 12%;
     width: 1140px;
     max-width: 80%;
     left: 50%;
@@ -65,14 +114,26 @@ header a{
     line-height: 1.3em;
 }
 .carousel .list .item .topic{
-    color: #f1683a;
+    color: #04D939;
+    text-shadow: 0px 0px 5px black;
+}
+
+.carousel .list .item .des{
+    width: 100%;
+    
+    background-color: #0174299d;
+    text-indent: 8px;
+    color: white;
+    border-radius: 24px;
+    padding: 15px;
+    font-size: 15px;
 }
 .carousel .list .item .buttons{
     display: grid;
     grid-template-columns: repeat(2, 130px);
     grid-template-rows: 40px;
-    gap: 5px;
-    margin-top: 20px;
+    gap: 15px;
+    margin-top: 30px;
 }
 
 .carousel .list .item .buttons a{
@@ -81,21 +142,28 @@ header a{
 }
 .carousel .list .item .buttons button{
     border: none;
+    border-radius: 24px;
     background-color: #eee;
     letter-spacing: 3px;
     font-family: Poppins;
     font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.carousel .list .item .buttons button:hover{
+    transform: scale(1.05);
 }
 .carousel .list .item .buttons button:nth-child(2){
-    background-color: transparent;
-    border: 1px solid #fff;
+    background-color: #03A63C;
+    border: 1.5px solid #fff;
     color: white;
 }
 /* thumbail */
 .thumbnail{
     position: absolute;
     bottom: 50px;
-    left: 50%;
+    left: 40%;
     width: max-content;
     z-index: 100;
     display: flex;
@@ -130,7 +198,7 @@ header a{
 .arrows{
     position: absolute;
     top: 80%;
-    right: 52%;
+    right: 58%;
     z-index: 100;
     width: 300px;
     max-width: 30%;
@@ -139,19 +207,21 @@ header a{
     align-items: center;
 }
 .arrows button{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #eee4;
+    width: 100px;
+    height: 45px;
+    border-radius: 24px;
+    background-color: white;
     border: none;
-    color: #fff;
+    color: black;
     font-family: monospace;
     font-weight: bold;
-    transition: .5s;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 .arrows button:hover{
-    background-color: #fff;
+    background-color: #03A63C;
     color: #000;
+    transform: scale(1.05);
 }
 
 /* animation */
@@ -306,8 +376,22 @@ header a{
 @media screen and (max-width: 678px) {
     .carousel .list .item .content{
         padding-right: 0;
+        top: 8%;
     }
     .carousel .list .item .content .title{
         font-size: 30px;
+    }
+
+    header a{
+        font-size: 14px;
+        margin-right: -15px;
+    }
+
+    .arrows{
+        right: 67%;
+    }
+
+    .thumbnail{
+        margin-bottom: -10px;
     }
 }

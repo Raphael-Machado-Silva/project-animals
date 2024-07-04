@@ -94,8 +94,8 @@ header a:hover{
 .carousel .list .item .content{
     position: absolute;
     top: 12%;
-    width: 1140px;
-    max-width: 80%;
+    width: 1240px;
+    max-width: 85%;
     left: 50%;
     transform: translateX(-50%);
     padding-right: 30%;
@@ -158,6 +158,22 @@ header a:hover{
     background-color: #03A63C;
     border: 1.5px solid #fff;
     color: white;
+}
+.imagem{
+    margin-top: 20px;
+    padding: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #00ff59;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.imagem:hover{
+    font-weight: bold;
+    font-size: 13px;
+    color: white;
+    text-shadow: 0px 0px 1px rgb(1, 66, 17);
 }
 /* thumbail */
 .thumbnail{
@@ -376,22 +392,36 @@ header a:hover{
 @media screen and (max-width: 678px) {
     .carousel .list .item .content{
         padding-right: 0;
-        top: 8%;
+        top: 11%;
+
     }
     .carousel .list .item .content .title{
-        font-size: 30px;
+        font-size: 55px;
+        text-shadow: 0px 0px 1px black;
     }
-
+    
     header a{
         font-size: 14px;
-        margin-right: -15px;
+        margin-right: -8px;
+        margin-left: 20px;
+        width: 60px;
     }
 
+    .logo_rm{
+        margin-left: -20px;
+    }
+
+    .carousel .list .item .buttons{
+        margin-top: 35%;
+    }
     .arrows{
         right: 67%;
     }
 
     .thumbnail{
         margin-bottom: -15px;
+    }
+    .des{
+        display: none;
     }
 }
